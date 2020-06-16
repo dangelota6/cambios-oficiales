@@ -1,0 +1,458 @@
+@font-face {
+    font-family: 'Museo Slab 100';
+    src: url('../Media/fonts/Museo-Sans/Museo_Slab_100.otf');
+}
+@font-face {
+    font-family: 'Museo Slab 300';
+    src: url('../Media/fonts/Museo-Sans/Museo_Slab_300.otf');
+}
+@font-face {
+    font-family: 'Museo Slab 500';
+    src: url('../Media/fonts/Museo-Sans/Museo_Slab_500.otf');
+}
+@font-face {
+    font-family: 'Museo Slab 700';
+    src: url('../Media/fonts/Museo-Sans/Museo_Slab_700.otf');
+}
+@font-face {
+    font-family: 'Museo Slab 900';
+    src: url('../Media/fonts/Museo-Sans/Museo_Slab_900.otf');
+}
+@font-face {
+    font-family: 'Museo Slab 1000';
+    src: url('../Media/fonts/Museo-Sans/Museo_Slab_1000.otf');
+}
+@font-face {
+    font-family: 'Museo Slab 100 Italic';
+    src: url('../Media/fonts/Museo-Sans/Museo_Slab_100italic.otf');
+}
+@font-face {
+    font-family: 'Museo Slab 300 Italic';
+    src: url('../Media/fonts/Museo-Sans/Museo_Slab_300italic.otf');
+}
+@font-face {
+    font-family: 'Museo Slab 500 Italic';
+    src: url('../Media/fonts/Museo-Sans/Museo_Slab_500italic.otf');
+}
+@font-face {
+    font-family: 'Museo Slab 700 Italic';
+    src: url('../Media/fonts/Museo-Sans/Museo_Slab_700italic.otf');
+}
+@font-face {
+    font-family: 'Museo Slab 900 Italic';
+    src: url('../Media/fonts/Museo-Sans/Museo_Slab_900italic.otf');
+}
+@font-face {
+    font-family: 'Museo Slab 1000 Italic';
+    src: url('../Media/fonts/Museo-Sans/Museo_Slab_1000italic.otf');
+}
+@font-face {
+    font-family: 'Museo 100 Regular';
+    src: url('../Media/fonts/Museo-Sans/Museo100-Regular.otf');
+}
+@font-face {
+    font-family: 'Museo 300 Regular';
+    src: url('../Media/fonts/Museo-Sans/Museo300-Regular.otf');
+}
+@font-face {
+    font-family: 'Museo 500 Regular';
+    src: url('../Media/fonts/Museo-Sans/Museo500-Regular.otf');
+}
+@font-face {
+    font-family: 'Museo 700 Regular';
+    src: url('../Media/fonts/Museo-Sans/Museo700-Regular.otf');
+}
+@font-face {
+    font-family: 'Museo 900 Regular';
+    src: url('../Media/fonts/Museo-Sans/Museo900-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Museo Sans 100';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans-100.otf');
+}
+
+@font-face {
+    font-family: 'Museo Sans 300';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans-300.otf');
+}
+
+@font-face {
+    font-family: 'Museo Sans 500';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans_500.otf');
+}
+
+@font-face {
+    font-family: 'Museo Sans 700';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans_700.otf');
+}
+
+@font-face {
+    font-family: 'Museo Sans 900';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans_900.otf');
+}
+
+@font-face {
+    font-family: 'Museo Sans 100 Italic';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans-100Italic.otf');
+}
+
+@font-face {
+    font-family: 'Museo Sans 300 Italic';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans-300Italic.otf');
+}
+
+@font-face {
+    font-family: 'Museo Sans 500 Italic';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans_500_Italic.otf');
+}
+
+@font-face {
+    font-family: 'Museo Sans 700 Italic';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans-700Italic.otf');
+}
+
+@font-face {
+    font-family: 'Museo Sans 900 Italic';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans-900Italic.otf');
+}
+
+/*Tipogragfias usadas*/
+@font-face {
+    font-family: 'Museo Regular';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans-100.otf');
+}
+
+@font-face {
+    font-family: 'Museo Regular 300';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans-300.otf');
+}
+
+@font-face {
+    font-family: 'Museo Regular 700';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans-700.otf');
+}
+
+@font-face {
+    font-family: 'Museo Regular 900';
+    src: url('../Media/fonts/Museo-Sans/MuseoSans-900.otf');
+}
+/*End*/
+
+* {
+    font-family: 'Museo Regular';
+}
+
+
+/*Este es un Css editado por rdelacruz*/
+
+.header_up {
+    font-size: 15px;
+}
+
+.header_up a {
+    text-decoration: none;
+}
+
+.header_up_tra {
+    font-weight: 500;
+    color: #B6B7B7;
+    text-align: right;
+    font-size: 15px;
+    padding-left: 0
+}
+
+.servLinea {
+    font-weight: bold;
+    color: #074E93;
+    font-size: 100px;
+}
+
+.caja-enterate {
+    font-size: 17px;
+    color: #FFFFFF;
+    padding: 20px;
+    font-family:'Museo Sans 900';
+}
+
+.caja-texto {
+    font-size: 15px;
+    padding-top: -15px;
+    padding-right: 3px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+.caja-ver {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    font-family: 'Museo Sans 900';
+}
+/*Fin css rdelacruz*/
+
+/*MegaMenu editado por rdelacruz*/
+.menu-item-logo {
+    width: 25%;
+}
+
+    .menu-item-logo img {
+        position: relative;
+        left: 40px;
+        width:70%;
+    }
+
+.cabec-accesi a {
+    color: #B6B7B7;
+    text-decoration: none;
+    font-family: 'Museo Sans 500';
+}
+
+    .cabec-accesi a:hover {
+        color: #00bce4;
+        text-decoration: none;
+    }
+
+.btn-normas {
+}
+
+    .btn-normas a {
+        text-transform: uppercase;
+        /*background: #ff8f00 ; */
+        font-weight: 600;
+        font-family: 'Museo Sans 900';
+    }
+
+
+
+.card-editado {
+    /*height:20vh; */
+    padding: 1em;
+    border-radius: 27px 27px 27px 27px;
+    -moz-border-radius: 27px 27px 27px 27px;
+    -webkit-border-radius: 27px 27px 27px 27px;
+    border: 0px solid #000000;
+    color: white;
+}
+
+.card-block a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Museo Sans 500';
+}
+
+.card-block img {
+    float: right;
+}
+
+.card-block h4 {
+    font-family: 'Museo Sans 700';
+}
+
+.card-block p {
+    font-family: 'Museo Sans 300';
+}
+
+/* Slider de servicios en linea*/
+.cuadro {
+    text-align: center;
+    border-radius: 26px 26px 26px 26px;
+    -moz-border-radius: 26px 26px 26px 26px;
+    -webkit-border-radius: 26px 26px 26px 26px;
+    border: 1px solid #dcdcdd;
+    cursor: pointer;
+    color: #333333
+}
+
+.slide_corto {
+    /*border: 11px solid #000000;margin:15% 25%;*/
+    /*cursor: pointer;
+    height: 100%;
+    width: 100%;
+    padding: 20px;*/
+}
+
+.slide-img {
+    padding-bottom: 0.7rem;
+}
+
+.slide-titulo {
+    font-size: 14px;
+    font-family: 'Museo Sans 300';
+    color: #333333;
+    line-height: 15px;
+}
+
+.Enterate-mas {
+    background: #F9F9F9;
+    height:420px;
+}
+.bloques-cont {
+    padding-top: 2%;
+}
+
+.Enterate-mas .seccion_ca, .seccion_cb, .seccion_cc {
+    padding: 10px;
+    border-radius: 27px 27px 27px 27px;
+    -moz-border-radius: 27px 27px 27px 27px;
+    -webkit-border-radius: 27px 27px 27px 27px;
+    border: 0px solid #000000;
+    color: white;
+}
+
+    .seccion_ca a, .seccion_cb a, .seccion_cc a {
+        text-decoration: none;
+        color: white;
+        cursor: pointer
+    }
+
+        .seccion_ca a:hover, .seccion_cb a:hover, .seccion_cc a:hover {
+            font-weight: bolder;
+        }
+
+.Enterate-mas .seccion_ca {
+    background: #027ec9;
+}
+
+.Enterate-mas .seccion_cb {
+    background: #3bb5e0;
+}
+
+.Enterate-mas .seccion_cc {
+    background: #ff8f00;
+}
+
+.espaciado-seccion {
+    padding: 20px 0px 60px;
+}
+
+.h1-centrado {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 40px;
+    font-family: 'Museo Sans 500';
+}
+
+.div-ayuda {
+    padding: 10px;
+    height: 100px;
+    background: blue;
+    border-radius: 36px 36px 36px 36px;
+    -moz-border-radius: 36px 36px 36px 36px;
+    -webkit-border-radius: 36px 36px 36px 36px;
+    border: 0px solid #000000;
+}
+
+.caja {
+    padding: 0 5px 7px 25px;
+}
+
+.img-ico {
+    height: 20vh;
+    top: 10vh;
+}
+
+.boton-slider-servicios {
+    cursor: pointer;
+    text-decoration: none;
+    padding: 45px 0.4rem;
+    
+}
+
+.divs-servicios-flechas {
+    height: 200px;
+}
+/* Cards de enterate más*/
+.card-modify {
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    padding: 10px;
+    height: 220px;
+}
+@media(max-width: 767px) {
+    .card-modify {
+        height: auto !important;
+    }
+    .Enterate-mas {
+        height: auto !important;
+    }
+    
+}
+
+@media (max-width: 1200px){
+    .img > img {
+        margin-top: -15px;
+    }
+}
+.card-color-1 {
+    background: #0077C0;
+    
+}
+
+.card-color-2 {
+    background: #00BCE4;
+}
+
+.card-color-3 {
+    background: #f68934;
+}
+
+.card-view-more {
+    font-family: 'Museo Sans 700';
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.card-title-modify {
+    font-family: 'Museo Sans 700';
+    color: white;
+    font-size:1rem
+}
+
+.card-text-modify {
+    font-family: 'Museo Sans 100';
+    color: white;
+    width:auto
+}
+/*Paginacion slider swipper*/
+.swiper-pagination {
+    position: initial;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
+    margin-top: 10px;
+    cursor: pointer;
+    margin-right: 7px;
+}
+/*Imagenes de descarga*/
+.img-down {
+    width:100%
+}
+/*BLoques enterate más*/
+@media (max-width: 767px) {
+    .banners-homes {
+        margin-bottom: 20px
+    }
+}
+@media (max-width: 575px) {
+    .enterate-bloque{
+        margin-bottom:20px
+    }
+    .cont-img-down {
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .img-down {
+        width: 50%
+    }
+    .contenido-centrado {
+        display: flex;
+        justify-content: center;
+    }
+
+}

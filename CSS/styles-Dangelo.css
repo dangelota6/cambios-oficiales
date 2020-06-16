@@ -1,0 +1,288 @@
+/* Tipografía */
+
+.titulo-medida-uno {
+	font-family: 'Museo Sans 100';
+	font-size: 35px;
+	color: #0077c0;
+}
+
+.titulo-medida-dos {
+	font-family: 'Museo Sans 100';
+	font-size: 35px;
+	color: #333333;
+}
+
+.titulo-medida-tres {
+	font-family: 'Museo Sans 300';
+	font-size: 20px;
+	color: #333333;
+}
+
+.titulo-medida-tres-anaranjado {
+	font-family: 'Museo Sans 300';
+	font-size: 20px;
+	color: #f68934;
+}
+
+.titulo-medida-tres-lista {
+	font-family: 'Museo Sans 100';
+	font-size: 20px;
+	color: #333333;
+}
+
+.titulo-medida-cuatro {
+	font-family: 'Museo Sans 500';
+	font-size: 13px;
+	color: #333333;
+}
+
+.parrafo {
+	font-family: 'Museo Sans 100';
+	font-size: 15px;
+	color: #333333;
+	text-align: justify;
+	line-height: 20px !important;
+}
+
+.parrafo-gior {
+	font-family: 'Museo Sans 100';
+	font-size: 15px;
+	color: #333333;
+	text-align: justify;
+	line-height: 20px !important;
+}
+
+.color-enlace {
+	font-family: 'Museo Sans 300';
+	font-size: 15px;
+	color: #0077c0;
+}
+
+/* botones pequeños */
+
+.btn-small-celeste {
+	font-family: 'Museo Sans 500';
+	font-size: 14px;
+	background: #00bce4;
+	color: #ffffff !important;
+}
+
+.btn-small-azul {
+	font-family: 'Museo Sans 500';
+	font-size: 14px;
+	background: #0077c0;
+	color: #ffffff !important;
+}
+
+.btn-small-anaranjado {
+	font-family: 'Museo Sans 500';
+	font-size: 14px;
+	background: #f68934;
+	color: #ffffff !important;
+}
+
+/* Paleta de colores principal */
+
+.texto-azul {
+	font-family: 'Museo Sans 500';
+	font-size: 20px;
+	color: #0077c0;
+	line-height: 20px;
+}
+
+.texto-celeste {
+	font-family: 'Museo Sans 500';
+	font-size: 15px;
+	color: #00bce4;
+}
+
+.texto-anaranjado {
+	font-family: 'Museo Sans 500';
+	font-size: 15px;
+	color: #f68934;
+}
+
+/* Paleta de colores secundaria */
+
+.texto-blanco {
+	font-family: 'Museo Sans 500';
+	font-size: 15px;
+	color: #ffffff;
+}
+
+.texto-negro {
+	font-family: 'Museo Sans 300';
+	font-size: 15px;
+	color: #333333;
+}
+
+/* flecha arriba, flecha abajo */
+
+.img_flecha_abajo {
+	display: inline-block;
+	float: right;
+}
+
+.img_flecha_abajo.flecha_abajo_estado {
+	display: none;
+}
+
+.img_flecha_arriba {
+	display: none;
+}
+
+.img_flecha_arriba.flecha_arriba_estado {
+	display: inline-block;
+	float: right;
+}
+
+/*botones menu despegable*/
+
+.btn-documentos {
+	background: #0077c0;
+	width: 100%;
+	text-align: left;
+	margin-top: -35px !important;
+}
+
+.dropdown-menublanco {
+	background: #f9f9f9;
+	width: 100%;
+	padding: 7px;
+}
+
+.dropdown-menu {
+	width: 100%;
+}
+
+/*boton select AÑO*/
+
+.btn-buscador-fecha {
+	font-family: 'Museo Sans 500';
+	font-size: 15px;
+	background: #0077c0;
+	color: #ffffff !important;
+}
+
+.tabla-cuadro-blanco {
+	font-family: 'Museo Sans 300';
+	font-size: 15px;
+	color: #ffffff;
+	background: #f68934;
+	line-height: 20px !important;
+}
+
+.tabla-cuadro-azul {
+	font-family: 'Museo Sans 300';
+	font-size: 15px;
+	color: #ffffff;
+	background: #0077ce;
+	text-align: center;
+}
+
+.negrita {
+	font-family: 'Museo Sans 500';
+	font-size: 16px;
+	color: #333333;
+}
+
+.resaltado {
+	font-family: 'Museo Sans 700';
+	font-size: 15px;
+	color: #333333;
+	text-align: justify;
+	line-height: 20px !important;
+}
+
+.lista {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.yt-toggle.collapsed .fa-caret-up {
+	display: none;
+}
+
+.yt-toggle.collapsed .fa-caret-down {
+	display: inline-block;
+}
+
+.yt-toggle .fa-caret-down {
+	display: none;
+}
+
+.texton a:hover {
+	color: #333333;
+	text-decoration: none;
+}
+.texto-hover a:hover {
+	color: #333333;
+	/* text-decoration: none; */
+}
+
+.texto-celeste-hover a:hover {
+	color: #00bce4;
+	text-decoration: none;
+}
+
+.enlace-color-anaranjado a:hover {
+	color: #f68934;
+	/* text-decoration: underline; */
+}
+
+/* responsive movil */
+
+@media (max-width: 768px) {
+	.titulo-medida-uno {
+		font-size: 20px;
+	}
+
+	.titulo-medida-dos {
+		font-size: 20px;
+	}
+
+	.titulo-medida-tres {
+		font-size: 16px;
+	}
+
+	.tabla-cuadro-blanco {
+		font-size: 14px;
+	}
+
+	.parrafo {
+		font-size: 14px;
+	}
+
+	.btn-buscador-fecha {
+		font-size: 14px;
+	}
+
+	.texto-negro {
+		font-size: 14px;
+	}
+
+	.texto-blanco {
+		font-size: 14px;
+	}
+
+	.texto-anaranjado {
+		font-size: 14px;
+	}
+
+	.texto-azul {
+		font-size: 14px;
+	}
+
+	.color-enlace {
+		font-family: 'Museo Sans 300';
+		font-size: 14px;
+		color: #0077c0;
+	}
+}
+
+@media (max-width: 533px) {
+	.magia {
+		padding-left: 40px;
+	}
+}
