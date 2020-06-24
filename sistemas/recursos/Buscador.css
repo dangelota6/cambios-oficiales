@@ -1,0 +1,137 @@
+
+.buton {
+    color: #fff;
+    border-color: #00bce4 !important;
+    font-family: 'Museo Sans 700';
+    font-size: 14px !important;
+    font-weight: bolder !important;
+    padding: 15px 30px !important;
+    text-transform: uppercase;
+}
+
+.form-control {
+    font-family: "Museo Sans 700";
+}
+
+.selection {
+    background-repeat: no-repeat;
+    background-position: right;
+	background-image: url(../Media/iconos/down-arrow-1.png) !important;
+    border: solid 1px #DFDFDF !important;
+    border-radius: 4px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    padding: 0 12px !important;
+}
+.btn-block {
+    background-color: #0077C0!important;
+    border-color: #0077C0!important;
+}
+
+.selection_search {
+    border: solid 1px #DFDFDF !important;
+    border-radius: 4px !important;
+    padding: 0 12px !important;
+}
+.btn-centrado {
+    text-align: center;
+}
+.btn-doc-principal {
+    text-decoration: none;
+    font-weight: bold;
+    color: #f68934;
+}
+.card-titulo {
+    text-decoration: none !important;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0 0 0;
+    color: #0077C0;
+    font-weight: bold;
+    font-family: "Museo Sans 700";
+    margin-bottom: 0 !important;
+}
+.card-titulo:hover {
+    color: #f68934;
+}
+a:hover {
+        text-decoration: none !important;
+    }
+.card-etiqueta {
+    font-family: 'Museo Sans 300';
+    font-size: 15px;
+    color: #00BCE4;
+    margin-top: 0;
+}
+.blogpost-excerpt > p{
+    font-size:14px;
+    line-height:20px;
+}
+.card-etiqueta:hover {
+    color: #f68934;
+}
+.btn-primary {
+    background-color: #00bce4 ;
+    border-color: #00bce4;
+    font-size:15px;
+}
+.btn-primary:hover {
+    background-color: #f68934 !important;
+    border-color: #f68934 !important;
+    font-size:15px;
+}
+.list-group-item > a{
+    color:#333333;
+    font-family:'Museo Sans 300';
+}
+.list-group-item > a:hover {
+    color: #0077C0;
+    font-family: 'Museo Sans 300';
+}
+/* Paginacion */
+.pag-nav-bar {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: row;
+    flex-direction: row
+}
+
+.pag-nav-bar--center {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.pag-nav-link, .pag-nav-link:visited {
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-bottom: 2px solid transparent
+}
+
+a.pag-nav-link.pag-nav-link--black {
+    color: #000
+}
+
+a.pag-nav-link.pag-nav-link--black:hover {
+    border-color: #000
+}
+
+.pag-nav-link--black.pag-nav-link--active {
+    box-shadow: inset 0 -2px 0 #000
+}
+.nav-link--disabled, .nav-link--disabled:hover {
+    border-color: transparent !important;
+    cursor: not-allowed;
+}
+@media (max-width: 767px){
+    .centrar {
+        text-align: center;
+    }
+}

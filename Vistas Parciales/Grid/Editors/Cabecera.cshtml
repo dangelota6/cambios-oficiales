@@ -1,0 +1,762 @@
+@inherits UmbracoViewPage
+@using Umbraco.Web.Templates
+@using Umbraco.Web.Models
+@{
+    string seo_titulo = Model.Value<string>("seo_titulo").ToUpper();
+    var lista_nodos_ancestros = Model.Ancestors().ToList();
+    var palabra = "";
+    if (Model.Name.ToUpper().Equals("PORTAL DEL USUARIO"))
+    {
+        palabra = "usuarios";
+    }
+    if (Model.Name.ToUpper().Equals("PORTAL DE OPERADORAS"))
+    {
+        palabra = "operadoras";
+    }
+    if (Model.Name.ToUpper().Equals("EN"))
+    {
+        palabra = "ingles";
+    }
+    if (lista_nodos_ancestros.Any())
+    {
+        foreach (var item in lista_nodos_ancestros.OrderBy(x => x.Level))
+        {
+            if (item.Name.ToUpper().Equals("PORTAL DEL USUARIO"))
+            {
+                palabra = "usuarios";
+                break;
+            }
+            if (item.Name.ToUpper().Equals("PORTAL DE OPERADORAS"))
+            {
+                palabra = "operadoras";
+                break;
+            }
+            if (item.Name.ToUpper().Equals("EN"))
+            {
+                palabra = "ingles";
+                break;
+            }
+        }
+    }
+
+}
+
+<!-- banner top -->
+<div class="banner-top">
+    <div class="banner-top container">
+        <ul class="d-flex mb-0">
+            <li class="@{ if (palabra.Equals("usuarios")) { WriteLiteral("active"); } }"><a href="@Umbraco.Content(2309).Url" class="cabecera-btn">Usuarios</a></li>
+            <li class="@{ if (palabra.Equals("operadoras")) { WriteLiteral("active"); } } "><a href="@Umbraco.Content(2247).Url" class="cabecera-btn">Operadores</a></li>
+        </ul>
+        <div class="d-flex">
+            <form class="form-inline my-2 my-lg-0" action="@Umbraco.Content(3631).Url" method="get">
+                <span class="icono-search fas fa-search "></span>
+                <input class="form-control search-styles" type="search" name="q" value="" placeholder="Buscar..." aria-label="Search">
+            </form>
+            <div class="banner-btn">
+                <ul class="d-flex p-0 mb-0">
+                    <span class="separator">&nbsp;&nbsp;|</span>
+                    <li class="hide-rd @{ if (palabra.Equals("ingles")) { WriteLiteral("active"); } } "><a class="cabecera-opcional" href="@Umbraco.Content(9056).Url">English</a></li>
+                    <span class="separator">|</span>
+                    <li class="hide-rd"><a class="cabecera-opcional" href="@Umbraco.Content(16122).Url">Accesibilidad</a></li>
+                    <span class="separator">|</span>
+                    <li class="hide-rd"><a class="cabecera-opcional" href="">Portal de Tranparencia Estándar</a></li>
+                    <li class="img-search"><img src="@Umbraco.Media(7016).Url" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+@if (palabra.Equals("usuarios"))
+{
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light container">
+
+            <a class="navbar-brand" href="@Umbraco.Content(2309).Url"><img src="@Umbraco.Media(2213).Url" alt="Opsitel"></a>
+            <div class="open-nav">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-3 w-100">
+                    <li class="nav-item detail-be">
+                        <a class="nav-link detail" href="#">LO QUE DEBES SABER <span class="sr-only">(current)</span></a>
+                        <div class="content-menu" style="z-index:10000">
+                            <div class="d-flex">
+                                <ul class="content-ul">
+                                    <li><a href="@Umbraco.Content(8030).Url">Derechos</a></li>
+                                    <li><a href="@Umbraco.Content(8031).Url">Cartas de Servicios</a></li>
+                                    <li><a href="@Umbraco.Content(9058).Url">Preguntas Frecuentes</a></li>
+                                    <li><a href="@Umbraco.Content(8033).Url">Normativas de Usuarios</a></li>
+                                    <li><a href="@Umbraco.Content(8034).Url">Actividades de Orientacion</a></li>
+                                </ul>
+                                <div class="column-two">
+                                    Guía de información y orientación
+                                    <ul class="list-style">
+                                        <li><a href="@Umbraco.Content(8039).Url">Lo que debes saber antes de reclamar</a></li>
+                                        <li><a href="@Umbraco.Content(8040).Url">Solución anticipada</a></li>
+                                        <li><a href="@Umbraco.Content(8041).Url">Esquema General</a></li>
+                                        <li><a href="@Umbraco.Content(8042).Url">¿Quiénes pueden reclamar?</a></li>
+                                        <li><a href="@Umbraco.Content(8043).Url">Requisitos</a></li>
+                                        <li><a href="@Umbraco.Content(8044).Url">Formas de presentación</a></li>
+                                        <li><a href="@Umbraco.Content(8045).Url">Silencio Administrativo Positivo</a></li>
+                                        <li><a href="@Umbraco.Content(8046).Url">¿Expediente de reclamo?</a></li>
+                                        <li><a href="@Umbraco.Content(8047).Url">Motivos, plazos y proc. para reclamar</a></li>
+                                        <li><a href="@Umbraco.Content(8048).Url">¿Cuándo presentar una queja?</a></li>
+                                        <li><a href="@Umbraco.Content(8049).Url">Formularios</a></li>
+                                        <li><a href="@Umbraco.Content(8050).Url">Denuncias</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="nav-item  detail-be">
+                        <a class="nav-link detail" href="#">TRASU <span class="sr-only">(current)</span></a>
+                        <div class="content-menu" style="z-index:10000">
+                            <div class="d-flex">
+                                <ul class="content-ul">
+                                    <li><a href="@Umbraco.Content(12079).Url">¿Qué es el TRASU?</a></li>
+                                    <li><a href="@Umbraco.Content(13080).Url">Lineamientos Resolutivos</a></li>
+                                    <li><a href="@Umbraco.Content(13081).Url">Medios Probatorios</a></li>
+                                    <li><a href="@Umbraco.Content(13082).Url">Jurisprudencia</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Umbraco.Content(13091).Url">CONSEJO DE USUARIOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="http://repositorio.osiptel.gob.pe/">INVESTIGACIONES</a>
+                    </li>
+                    <li class="nav-item  detail-be">
+                        <a class="nav-link detail" href="#">CONTÁCTENOS <span class="sr-only">(current)</span></a>
+                        <div class="content-menu" style="z-index:10000">
+                            <div class="d-flex">
+                                <ul class="content-ul">
+                                    <li><a href="@Umbraco.Content(13083).Url">Nuestras sedes</a></li>
+                                    <li><a href="@Umbraco.Content(13084).Url">Atencion a personas con discapacidad auditiva</a></li>
+                                    <li><a href="@Umbraco.Content(16128).Url">Formulario de Consulta y Orientación al Usuario</a></li>
+                                </ul>
+                                <div class="d-flex">
+                                    <ul class="content-ul">
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-menu" href="@Umbraco.Content(2271).Url">BUSCADOR DE NORMAS Y REGULACIONES</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- menu collapse -->
+        <div class="nav-hide" style="z-index:1000">
+            <div class="close p-3 mr-2">
+                <i class="fas fa-plus transfor-search"></i>
+            </div>
+            <ul class="list-group list-submenu">
+                <li class="list-group-item"><a class="collapse-btn" href="@Umbraco.Content(2309).Url">Usuarios</a></li>
+                <li class="list-group-item"><a class="collapse-btn" href="@Umbraco.Content(2247).Url">Operadoras</a></li>
+            </ul>
+            <br>
+            <form action="@Umbraco.Content(3631).Url" method="get">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="input-group search-rd">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input class="form-control mr-sm-2" type="search" name="q" value="" placeholder="Buscar..." aria-label="Search">
+                    </div>
+
+                </div>
+            </form>
+            <ul class="list-group list-submenu">
+                <li class="list-group-item"><a href="@Umbraco.Content(9056).Url">English</a></li>
+                <li class="list-group-item"><a href="@Umbraco.Content(16122).Url">Accesibilidad</a></li>
+                <li class="list-group-item">Portal de Tranparencia Estándar</li>
+            </ul><br>
+            <ul class="list-group">
+                <li class="list-group-item list-collapse" data-toggle="collapse" href="#collapse-menu" role="button" aria-expanded="false" aria-controls="collapse-menu">
+                    Lo que debes saber
+                    <span class="px-2"> <i class="fas fa-chevron-down"></i></span>
+
+                </li>
+                <div class="collapse collapse-menu" id="collapse-menu">
+                    <ul class="list-group collapse-menu">
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(8030).Url">Derechos</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(8031).Url">Cartas de Servicios</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(9058).Url">Preguntas Frecuentes</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(8033).Url">Normativas de Usuarios</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(8034).Url">Actividades de Orientacion</a></li>
+                        <li class="list-group-item hide-li extend-menu" data-toggle="collapse" href="#collapse-submenu" role="button" aria-expanded="false" aria-controls="collapse-submenu">
+                            <a> Guía de información y orientación</a>
+                            <span class="px-2"><i class="fas fa-plus"></i></span>
+                        </li>
+                        <div class="collapse" id="collapse-submenu">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="@Umbraco.Content(8039).Url">Lo que debes saber antes de reclamar</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(8040).Url">Solución anticipada</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(8041).Url">Esquema General</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(8042).Url">¿Quiénes pueden reclamar?</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(8043).Url">Requisitos</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(8044).Url">Formas de presentación</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(8045).Url">Silencio Administrativo Positivo</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(8046).Url">¿Expediente de reclamo?</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(8047).Url">Motivos, plazos y proc. para reclamar</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(8048).Url">¿Cuándo presentar una queja?</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(8049).Url">Formularios</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(8050).Url">Denuncias</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+                <li class="list-group-item list-collapse" data-toggle="collapse" href="#collapse-menu-1" role="button" aria-expanded="false" aria-controls="collapse-menu">
+                    TRASU
+                    <span class="px-2"> <i class="fas fa-chevron-down"></i></span>
+
+                </li>
+                <div class="collapse collapse-menu" id="collapse-menu-1">
+                    <ul class="list-group collapse-menu">
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(12079).Url">¿Qué es el TRASU?</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(13082).Url">Jurisprudencia</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(13080).Url">Lineamientos Resolutivos</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(13081).Url">Medios Probatorios</a></li>
+                    </ul>
+                </div>
+                <li class="list-group-item"><a class="collapse-btn" href="@Umbraco.Content(13091).Url">Consejo de Usuarios</a></li>
+                <li class="list-group-item"><a class="collapse-btn" href="http://repositorio.osiptel.gob.pe/" target="_blank">Investigaciones</a></li>
+                <li class="list-group-item list-collapse" data-toggle="collapse" href="#collapse-menu-3" role="button" aria-expanded="false" aria-controls="collapse-menu">
+                    Contáctenos
+                    <span class="px-2"> <i class="fas fa-chevron-down"></i></span>
+
+                </li>
+                <div class="collapse collapse-menu" id="collapse-menu-3">
+                    <ul class="list-group collapse-menu">
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(13083).Url">Nuestras sedes</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(13084).Url">Atencion a personas con discapacidad auditiva</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16128).Url">Formulario de Consulta y Orientación al Usuario</a></li>
+                    </ul>
+                </div>
+                <li class="list-group-item" style="border-bottom-width: 0;">
+                    <a class="nav-link btn-menu" href="@Umbraco.Content(2271).Url">BUSCADOR DE NORMAS Y REGULACIONES</a>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+}
+@if ((!palabra.Equals("ingles") && !palabra.Equals("usuarios")) || palabra.Equals("operadoras"))
+{
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light container">
+
+            <a class="navbar-brand" href="@Umbraco.Content(2309).Url"><img src="@Umbraco.Media(2213).Url" alt="Opsitel"></a>
+            <div class="open-nav">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-3 w-100">
+                    <li class="nav-item detail-be">
+                        <a class="nav-link detail" href="#">SOLUCION DE CONTROVERSIAS <span class="sr-only">(current)</span></a>
+                        <div class="content-menu" style="z-index:10000">
+                            <div class="d-flex">
+                                <div class="column-two">
+                                    Secretaria Tecnica
+                                    <ul class="list-style">
+                                        <li><a href="@Umbraco.Content(15130).Url">Descripcion</a></li>
+                                        <li><a href="@Umbraco.Content(15131).Url">Estadisticas</a></li>
+                                        <li><a href="@Umbraco.Content(15132).Url">Normas</a></li>
+                                        <li><a href="@Umbraco.Content(15133).Url">Documentos de trabajo</a></li>
+
+                                    </ul>
+
+                                </div>
+                                <div class="column-two">
+                                    Cuerpos Colegiados
+                                    <ul class="list-style">
+                                        <li><a href="@Umbraco.Content(15134).Url">Descripcion</a></li>
+                                        <li><a href="@Umbraco.Content(15135).Url">Conformacion</a></li>
+
+                                    </ul>
+
+                                </div>
+                                <div class="column-two">
+                                    Tribunal de solucion de controversias
+                                    <ul class="list-style">
+                                        <li><a href="@Umbraco.Content(15136).Url">Descripcion</a></li>
+                                        <li><a href="@Umbraco.Content(15137).Url">Conformacion</a></li>
+                                        <li><a href="@Umbraco.Content(15138).Url">Precedentes de observancia obligatoria</a></li>
+
+                                    </ul>
+
+                                </div>
+
+                                <ul class="content-ul">
+                                    <li><a href="@Umbraco.Content(2402).Url">Buscador de Expedientes</a>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="nav-item  detail-be">
+                        <a class="nav-link detail" href="#">REGULACIÓN <span class="sr-only">(current)</span></a>
+                        <div class="content-menu" style="z-index:10000">
+                            <div class="d-flex">
+                                <ul class="content-ul">
+                                    <li><a href="@Umbraco.Content(2338).Url">Regulación Tarifas Tope</a></li>
+                                    <li><a href="@Umbraco.Content(2371).Url">Factor de Productividad</a></li>
+                                    <li><a href="@Umbraco.Content(2268).Url">Regulación Cargos de Interconexión</a></li>
+                                </ul>
+                                <div class="d-flex">
+                                    <ul class="content-ul">
+                                        <li><a href="@Umbraco.Content(11073).Url">Sistema de Contabilidad Separada</a></li>
+                                        <li><a href="@Umbraco.Content(16260).Url">Neutralidad de Red</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="nav-item  detail-be">
+                        <a class="nav-link detail" href="#">SUPERVISIONES Y SANCIONES <span class="sr-only">(current)</span></a>
+                        <div class="content-menu" style="z-index:10000">
+                            <div class="d-flex">
+                                <ul class="content-ul">
+                                    <li><a href="@Umbraco.Content(5726).Url">Multas Impuestas</a></li>
+                                    <li><a href="@Umbraco.Content(5727).Url">Medidas Correctivas</a></li>
+                                    <li><a href="@Umbraco.Content(5728).Url">Acciones de Supervisión</a></li>
+                                </ul>
+                                <div class="d-flex">
+                                    <ul class="content-ul">
+                                        <li><a href="@Umbraco.Content(5729).Url">Registro de Sanciones</a></li>
+                                        <li><a href="@Umbraco.Content(5730).Url">Plan Mínimo de Expansión</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="nav-item  detail-be">
+                        <a class="nav-link detail" href="#">CONTRATOS, MANDATOS Y OFERTAS BÁSICAS <span class="sr-only">(current)</span></a>
+                        <div class="content-menu" style="z-index:10000">
+                            <div class="d-flex">
+                                <ul class="content-ul">
+                                    <li><a href="@Umbraco.Content(2280).Url">Ofertas Básicas</a></li>
+                                    <li><a href="@Umbraco.Content(2277).Url">Mandatos</a></li>
+                                </ul>
+                                @*<div class="column-two">
+                                        <a href="@Umbraco.Content(2280).Url">Ofertas Básicas</a>
+                                        <ul class="list-style">
+                                            <li><a href="@Umbraco.Content(3590).Url">Interconexión</a></li>
+                                            <li><a href="@Umbraco.Content(3591).Url">Compartición de infraestructura como proveedor importante</a></li>
+                                            <li><a href="@Umbraco.Content(3592).Url">Facilidades Complementarias - Red Dorsal</a></li>
+                                        </ul>
+
+                                    </div>*@
+                                <div class="column-two">
+                                    Contratos
+                                    <ul class="list-style">
+                                        <li><a href="@Umbraco.Content(2274).Url">Interconexión</a></li>
+                                        <li><a href="@Umbraco.Content(16283).Url">Comparticion de Infraestructura</a></li>
+                                        <li><a href="@Umbraco.Content(2374).Url">Operadores Móviles Virtuales</a></li>
+                                        <li><a href="@Umbraco.Content(2375).Url">Operadores de Intraestructura Móvil Rural</a></li>
+                                        <li><a href="@Umbraco.Content(2376).Url">Emisor Dinero Eléctronico</a></li>
+                                        <li><a href="@Umbraco.Content(16282).Url">Acuerdos de Comercialización</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Umbraco.Content(16268).Url">PEDIDOS DE OPINIÓN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-menu" href="@Umbraco.Content(2271).Url">BUSCADOR DE NORMAS Y REGULACIONES</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- menu collapse -->
+        <div class="nav-hide" style="z-index:1000">
+            <div class="close p-3 mr-2">
+                <i class="fas fa-plus transfor-search"></i>
+            </div>
+            <ul class="list-group list-submenu">
+                <li class="list-group-item"><a class="collapse-btn" href="@Umbraco.Content(2309).Url">Usuarios</a></li>
+                <li class="list-group-item"><a class="collapse-btn" href="@Umbraco.Content(2247).Url">Operadoras</a></li>
+            </ul>
+            <br>
+            <form action="@Umbraco.Content(3631).Url" method="get">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="input-group search-rd">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input class="form-control mr-sm-2" type="search" name="q" value="" placeholder="Buscar..." aria-label="Search">
+                    </div>
+
+                </div>
+            </form>
+            <ul class="list-group list-submenu">
+                <li class="list-group-item"><a href="@Umbraco.Content(9056).Url">English</a></li>
+                <li class="list-group-item"><a href="@Umbraco.Content(16122).Url">Accesibilidad</a></li>
+                <li class="list-group-item">Portal de Tranparencia Estándar</li>
+            </ul><br>
+            <ul class="list-group">
+                <li class="list-group-item list-collapse" data-toggle="collapse" href="#collapse-menu" role="button" aria-expanded="false" aria-controls="collapse-menu">
+                    SOLUCION DE CONTROVERSIAS
+                    <span class="px-2"> <i class="fas fa-chevron-down"></i></span>
+
+                </li>
+                <div class="collapse collapse-menu" id="collapse-menu">
+                    <ul class="list-group collapse-menu">
+                        <li class="list-group-item hide-li extend-menu" data-toggle="collapse" href="#collapse-submenu-01" role="button" aria-expanded="false" aria-controls="collapse-submenu">
+                            <a> Secretaria Tecnica</a>
+                            <span class="px-2"><i class="fas fa-plus"></i></span>
+                        </li>
+                        <div class="collapse" id="collapse-submenu-01">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="@Umbraco.Content(15130).Url">Descripcion</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(15131).Url">Estadisticas</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(15132).Url">Normas</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(15133).Url">Documentos de trabajo</a></li>
+
+                            </ul>
+                        </div>
+                        <li class="list-group-item hide-li extend-menu" data-toggle="collapse" href="#collapse-submenu-02" role="button" aria-expanded="false" aria-controls="collapse-submenu">
+                            <a>Cuerpos Colegiados</a>
+                            <span class="px-2"><i class="fas fa-plus"></i></span>
+                        </li>
+                        <div class="collapse" id="collapse-submenu-02">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="@Umbraco.Content(15134).Url">Descripcion</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(15135).Url">Conformacion</a></li>
+
+                            </ul>
+                        </div>
+                        <li class="list-group-item hide-li extend-menu" data-toggle="collapse" href="#collapse-submenu-03" role="button" aria-expanded="false" aria-controls="collapse-submenu">
+                            <a>Tribunal de solucion de controversias</a>
+                            <span class="px-2"><i class="fas fa-plus"></i></span>
+                        </li>
+                        <div class="collapse" id="collapse-submenu-03">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="@Umbraco.Content(15136).Url">Descripcion</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(15137).Url">Conformacion</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(15138).Url">Precedentes de observancia obligatoria</a></li>
+
+                            </ul>
+                        </div>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(2402).Url">Buscador de Expedientes</a>
+                    </ul>
+                </div>
+                <li class="list-group-item list-collapse" data-toggle="collapse" href="#collapse-menu-1" role="button" aria-expanded="false" aria-controls="collapse-menu">
+                    REGULACIÓN
+                    <span class="px-2"> <i class="fas fa-chevron-down"></i></span>
+
+                </li>
+                <div class="collapse collapse-menu" id="collapse-menu-1">
+                    <ul class="list-group collapse-menu">
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(2338).Url">Regulación Tarifas Tope</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(2371).Url">Factor de Productividad</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(2268).Url">Regulación Cargos de Interconexión</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(11073).Url">Sistema de Contabilidad Separada</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16260).Url">Neutralidad de Red</a></li>
+                    </ul>
+                </div>
+                <li class="list-group-item list-collapse" data-toggle="collapse" href="#collapse-menu-2" role="button" aria-expanded="false" aria-controls="collapse-menu">
+                    SUPERVISIONES Y SANCIONES
+                    <span class="px-2"> <i class="fas fa-chevron-down"></i></span>
+
+                </li>
+                <div class="collapse collapse-menu" id="collapse-menu-2">
+                    <ul class="list-group collapse-menu">
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(5726).Url">Multas Impuestas</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(5727).Url">Medidas Correctivas</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(5728).Url">Acciones de Supervisión</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(5729).Url">Registro de Sanciones</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(5730).Url">Plan Mínimo de Expansión</a></li>
+                    </ul>
+                </div>
+                <li class="list-group-item list-collapse" data-toggle="collapse" href="#collapse-menu-3" role="button" aria-expanded="false" aria-controls="collapse-menu">
+                    CONTRATOS, MANDATOS Y OFERTAS BÁSICAS
+                    <span class="px-2"> <i class="fas fa-chevron-down"></i></span>
+                </li>
+                <div class="collapse collapse-menu" id="collapse-menu-3">
+                    <ul class="list-group collapse-menu">
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(2280).Url">Ofertas Básicass</a></li>
+                        <li class="list-group-item hide-li extend-menu" data-toggle="collapse" href="#collapse-submenu-01" role="button" aria-expanded="false" aria-controls="collapse-submenu">
+                            <a>CONTRATOS</a>
+                            <span class="px-2"><i class="fas fa-plus"></i></span>
+                        </li>
+                        <div class="collapse" id="collapse-submenu-01">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="@Umbraco.Content(2274).Url">Interconexión</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16283).Url">Comparticion de Infraestructura</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(2374).Url">Operadores Móviles Virtuales</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(2375).Url">Operadores de Intraestructura Móvil Rural</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(2376).Url">Emisor Dinero Eléctronico</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16282).Url">Acuerdos de Comercialización</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+                <li class="list-group-item"><a class="collapse-btn" href="@Umbraco.Content(16268).Url">PEDIDOS DE OPINIÓN</a></li>
+
+                <li class="list-group-item" style="border-bottom-width: 0;">
+                    <a class="nav-link btn-menu" href="@Umbraco.Content(2271).Url">BUSCADOR DE NORMAS Y REGULACIONES</a>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+}
+@if (palabra.Equals("ingles"))
+{
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light container">
+
+            <a class="navbar-brand" href="@Umbraco.Content(2309).Url"><img src="@Umbraco.Media(2213).Url" alt="Opsitel"></a>
+            <div class="open-nav">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-3 w-100">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                    <li class="nav-item detail-be">
+                        <a class="nav-link detail" href="#">YOUR OSIPTEL<span class="sr-only">(current)</span></a>
+                        <div class="content-menu" style="z-index:10000">
+                            <div class="d-flex">
+                                <ul class="content-ul">
+                                    <li><a href="@Umbraco.Content(16139).Url">Publications</a></li>
+                                    <li><a href="@Umbraco.Content(16140).Url">Research</a></li>
+                                    <li><a href="@Umbraco.Content(16141).Url">Contact us</a></li>
+                                    <li><a href="@Umbraco.Content(16142).Url">Our offices</a></li>
+                                    <li><a href="@Umbraco.Content(16143).Url">Institutional Activities Agenda</a></li>
+                                    <li><a href="@Umbraco.Content(16144).Url">Competition Agencies</a></li>
+                                    <li><a href="@Umbraco.Content(16145).Url">Communication Campaigns</a></li>
+                                </ul>
+                                <div class="column-two">
+                                    Institutional Information
+                                    <ul class="list-style">
+                                        <li><a href="@Umbraco.Content(16147).Url">Mission, Vision and Purpose</a></li>
+                                        <li><a href="@Umbraco.Content(16148).Url">Institutional values</a></li>
+                                        <li><a href="@Umbraco.Content(16149).Url">Objectives</a></li>
+                                        <li><a href="@Umbraco.Content(16150).Url">Functions</a></li>
+                                        <li><a href="@Umbraco.Content(16151).Url">Principles</a></li>
+                                        <li><a href="@Umbraco.Content(16152).Url">Quality policy</a></li>
+                                        <li><a href="@Umbraco.Content(16153).Url">Organizational Structure</a></li>
+                                        <li><a href="@Umbraco.Content(16154).Url">How we work</a></li>
+                                        <li><a href="@Umbraco.Content(16155).Url">Institutional Strategic Plan</a></li>
+                                        <li><a href="@Umbraco.Content(16156).Url">Code of Ethics</a></li>
+                                        <li><a href="@Umbraco.Content(16157).Url">Internal Control System</a></li>
+                                        <li><a href="@Umbraco.Content(16158).Url">Information Security Policy</a></li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="nav-item detail-be">
+                        <a class="nav-link detail" href="#">OPERATING COMPANIES <span class="sr-only">(current)</span></a>
+                        <div class="content-menu" style="z-index:10000">
+                            <div class="d-flex">
+                                <ul class="content-ul">
+                                    <li><a href="@Umbraco.Content(16160).Url">Telecommunications standards</a></li>
+                                    <li><a href="@Umbraco.Content(16161).Url">Arbitration Center</a></li>
+                                    <li><a href="@Umbraco.Content(16162).Url">Regulation Contributions</a></li>
+                                    <li><a href="@Umbraco.Content(16163).Url">Commercialization Agreements</a></li>
+                                    <li><a href="@Umbraco.Content(16164).Url">Supervision and Sanctions</a></li>
+                                    <li><a href="@Umbraco.Content(16165).Url">Infrastructure Sharing Contracts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- menu collapse -->
+        <div class="nav-hide" style="z-index:1000">
+            <div class="close p-3 mr-2">
+                <i class="fas fa-plus transfor-search"></i>
+            </div>
+            <ul class="list-group list-submenu">
+                <li class="list-group-item"><a class="collapse-btn" href="@Umbraco.Content(2309).Url">Usuarios</a></li>
+                <li class="list-group-item"><a class="collapse-btn" href="@Umbraco.Content(2247).Url">Operadoras</a></li>
+            </ul>
+            <br>
+            <form action="@Umbraco.Content(3631).Url" method="get">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="input-group search-rd">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input class="form-control mr-sm-2" type="search" name="q" value="" placeholder="Buscar..." aria-label="Search">
+                    </div>
+
+                </div>
+            </form>
+            <ul class="list-group list-submenu">
+                <li class="list-group-item"><a href="@Umbraco.Content(9056).Url">English</a></li>
+                <li class="list-group-item"><a href="@Umbraco.Content(16122).Url">Accesibilidad</a></li>
+                <li class="list-group-item">Portal de Tranparencia Estándar</li>
+            </ul><br>
+            <ul class="list-group">
+                <li class="list-group-item list-collapse" data-toggle="collapse" href="#collapse-menu" role="button" aria-expanded="false" aria-controls="collapse-menu">
+                    YOUR OSIPTEL
+                    <span class="px-2"> <i class="fas fa-chevron-down"></i></span>
+
+                </li>
+                <div class="collapse collapse-menu" id="collapse-menu">
+                    <ul class="list-group collapse-menu">
+                        <li class="list-group-item hide-li extend-menu" data-toggle="collapse" href="#collapse-submenu-01" role="button" aria-expanded="false" aria-controls="collapse-submenu">
+                            <a> Secretaria Tecnica</a>
+                            <span class="px-2"><i class="fas fa-plus"></i></span>
+                        </li>
+                        <div class="collapse" id="collapse-submenu-01">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="@Umbraco.Content(16147).Url">Mission, Vision and Purpose</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16148).Url">Institutional values</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16149).Url">Objectives</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16150).Url">Functions</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16151).Url">Principles</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16152).Url">Quality policy</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16153).Url">Organizational Structure</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16154).Url">How we work</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16155).Url">Institutional Strategic Plan</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16156).Url">Code of Ethics</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16157).Url">Internal Control System</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(16158).Url">Information Security Policy</a></li>
+                            </ul>
+                        </div>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16139).Url">Publications</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16140).Url">Research</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16141).Url">Contact us</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16142).Url">Our offices</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16143).Url">Institutional Activities Agenda</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16144).Url">Competition Agencies</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16145).Url">Communication Campaigns</a></li>
+                    </ul>
+                </div>
+                <li class="list-group-item list-collapse" data-toggle="collapse" href="#collapse-menu-1" role="button" aria-expanded="false" aria-controls="collapse-menu">
+                    OPERATING COMPANIES
+                    <span class="px-2"> <i class="fas fa-chevron-down"></i></span>
+
+                </li>
+                <div class="collapse collapse-menu" id="collapse-menu-1">
+                    <ul class="list-group collapse-menu">
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16160).Url">Telecommunications standards</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16161).Url">Arbitration Center</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16162).Url">Regulation Contributions</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16163).Url">Commercialization Agreements</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16164).Url">Supervision and Sanctions</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16165).Url">Infrastructure Sharing Contracts</a></li>
+                    </ul>
+                </div>
+
+            </ul>
+        </div>
+
+    </header>
+}
+@if (!seo_titulo.Equals("PORTAL DE OPERADORAS") && !seo_titulo.Equals("PORTAL DEL USUARIO"))
+{
+    <section class="titulo contenedor-titulo">
+        <div class="container">
+            <div class="row">
+                <div class="titulo contenedor-titulo col-md-12" style="display: flex; align-items: center; ">
+                    <h1 class="titulo-cabecera">@seo_titulo </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    var selection = Model.Ancestors().ToList();
+    int counter = 1;
+    @*Seccion de las migajas de pan*@
+    if (selection.Any())
+    {
+        <div class="page__section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="breadcrumb breadcrumb_type1" style="padding:30px 0 30px 10px;">
+                            <ol class="breadcrumb__list r-list">
+                                @foreach (var item in selection.OrderBy(x => x.Level))
+                                {
+                                    if (item.Name.Equals("Resoluciones"))
+                                    {
+                                        <li class="breadcrumb__group">
+                                            <a href="@Umbraco.Content(2232).Url" class="breadcrumb__point r-link" id="@Umbraco.Content(2232).Name">
+                                                @Umbraco.Content(2232).Name
+                                            </a>
+                                            <span class="breadcrumb__divider" aria-hidden="true"><i class="fas fa-angle-double-right" style="font-size:0.7rem;"></i></span>
+                                        </li>
+                                        <li class="breadcrumb__group">
+                                            <a href="@Umbraco.Content(2271).Url" class="breadcrumb__point r-link" id="@Umbraco.Content(2271).Name">
+                                                @Umbraco.Content(2271).Name
+                                            </a>
+                                            <span class="breadcrumb__divider" aria-hidden="true"><i class="fas fa-angle-double-right" style="font-size:0.7rem;"></i></span>
+                                        </li>
+                                    }
+                                    if (item.Name.Equals("Tipos de Convocatorias"))
+                                    {
+                                        <li class="breadcrumb__group">
+                                            <a href="@Umbraco.Content(2232).Url" class="breadcrumb__point r-link" id="@Umbraco.Content(2232).Name">
+                                                @Umbraco.Content(2232).Name
+                                            </a>
+                                            <span class="breadcrumb__divider" aria-hidden="true"><i class="fas fa-angle-double-right" style="font-size:0.7rem;"></i></span>
+                                        </li>
+                                        <li class="breadcrumb__group">
+                                            <a href="@Umbraco.Content(2233).Url" class="breadcrumb__point r-link" id="@Umbraco.Content(2233).Name">
+                                                @Umbraco.Content(2233).Name
+                                            </a>
+                                            <span class="breadcrumb__divider" aria-hidden="true"><i class="fas fa-angle-double-right" style="font-size:0.7rem;"></i></span>
+                                        </li>
+                                    }
+                                    if (!item.Name.Equals("Tipos de Convocatorias") || item.Name.Equals("Resoluciones"))
+                                    {
+                                        <li class="breadcrumb__group">
+                                            <a href="@item.Url" class="breadcrumb__point r-link" id="@item.Name">
+                                                @item.Name
+                                            </a>
+                                            <span class="breadcrumb__divider" aria-hidden="true"><i class="fas fa-angle-double-right" style="font-size:0.7rem;"></i></span>
+                                        </li>
+                                    }
+                                }
+                                <li class="breadcrumb__group">
+                                    <span class="breadcrumb__point" aria-current="page">@Model.Name</span>
+                                </li>
+                            </ol>
+                        </nav>
+
+                        <hr style="margin:0" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+}
+

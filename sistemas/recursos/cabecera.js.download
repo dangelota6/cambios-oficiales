@@ -1,0 +1,15 @@
+$(document).ready(function(){
+	$(".open-nav").click(function(){
+		$(".nav-hide").addClass("nav-rd");
+    });
+    $(".close").click(function(){
+        $(".nav-hide").removeClass("nav-rd");
+        console.log('entra??')
+    });
+    $(".extend-menu").click(function(){
+        console.log('oli');
+
+        var op = $(".collapse-menu");
+        op.toggleClass('hide-color')
+    })
+});

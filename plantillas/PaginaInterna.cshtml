@@ -1,0 +1,262 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.PaginaInterna>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = null;
+    string tabsId = "controladorPrincipal";
+    var lst_tabs = Model.Value<IEnumerable<IPublishedElement>>(tabsId);
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @Html.Partial("Globales/Head")
+
+    <style>
+        .bton {
+            height: auto !important;
+            width: 180px !important;
+            padding: 5px !important;
+            background: #00bce4;
+            color: white;
+            font-weight: bolder;
+            text-transform: uppercase;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 0 !important;
+            align-items: center !important;
+            display: flex !important;
+            text-transform: uppercase;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 13px;
+            text-align: center;
+            justify-content: center;
+            font-weight: bold;
+            font-family: 'Museo Sans 500';
+            border-radius: 11px 10px 10px 10px !important;
+            -moz-border-radius: 11px 10px 10px 10px !important;
+            -webkit-border-radius: 11px 10px 10px 10px !important;
+        }
+
+            .bton:hover {
+                height: auto !important;
+                width: 180px !important;
+                padding: 5px !important;
+                background: #ff8f00;
+                color: white;
+                font-weight: bolder;
+                text-transform: uppercase;
+                display: inline-block;
+                text-decoration: none;
+                margin-top: 0 !important;
+                align-items: center !important;
+                display: flex !important;
+                text-transform: uppercase;
+                display: inline-block;
+                text-decoration: none;
+                font-size: 13px;
+                text-align: center;
+                justify-content: center;
+                font-weight: bold;
+                font-family: 'Museo Sans 500';
+                border-radius: 11px 10px 10px 10px !important;
+                -moz-border-radius: 11px 10px 10px 10px !important;
+                -webkit-border-radius: 11px 10px 10px 10px !important;
+            }
+
+        .tabs {
+            display: inline-block;
+            left: 50%;
+            right: 50%;
+            width: 100%;
+        }
+
+        .tab-links:after {
+            display: block;
+            clear: both;
+            content: '';
+        }
+
+        .tab-links td {
+            list-style: none;
+            width: 150px;
+            height: 55px;
+        }
+
+        .tab-links .a {
+            height: 62px !important;
+            align-items: center !important;
+            display: flex !important;
+            text-transform: uppercase;
+            padding: 9px 10px;
+            display: inline-block;
+            border-radius: 3px 3px 0px 0px;
+            color: #333333;
+            text-decoration: none;
+            font-size: 13px;
+            text-align: center;
+            justify-content: center;
+            height: 102%;
+            width: 100%;
+            font-weight: bold;
+            font-family: 'Museo Sans 500'
+        }
+
+        .tab-links a:hover {
+            color: #0077C0;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Museo Sans 500'
+        }
+
+        .tab-links {
+            margin-bottom: 0px;
+        }
+
+
+        td.active .a,
+        td.active .a:hover {
+            width: 100%;
+            text-decoration: none;
+            background: white;
+            color: #0077C0;
+            font-weight: bold;
+            border-bottom: 2px #0077C0 solid;
+            text-transform: uppercase;
+            font-family: 'Museo Sans 500';
+        }
+
+        .tab-content {
+            padding: 15px;
+            border-radius: 3px;
+            background: white;
+        }
+
+        .tab {
+            display: none;
+        }
+
+            .tab.active {
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    @Html.Partial("Grid/Cabecera")
+    <section style="padding-top:20px">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="padding:0 !important">
+
+                    @using Umbraco.Web.Models
+                    @if (lst_tabs != null && lst_tabs.Count() != 1)
+                    {
+
+                        int contador = 0;
+                        int contador_1 = 0;
+                        <div class="tabs">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12" style="width: 100%; overflow: auto;">
+                                        <table style="border-bottom: 0.5px #edeeee solid;">
+                                            <tr class="tab-links">
+                                                @foreach (var tab in lst_tabs)
+                                                {
+                                                    contador++;
+                                                    string title = tab.Value<string>("titulo");
+                                                    string urltab = "#tab";
+                                                    if (contador == 1)
+                                                    {
+                                                        <td class="active"><a class="a" href="@urltab@contador">@title</a></td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td><a class="a" href="@urltab@contador">@title</a></td>
+                                                    }
+
+
+                                                }
+                                                <td></td>
+                                                @using Umbraco.Web.Models
+                                                @if (!Model.Value<string>("btn_titulo").IsNullOrWhiteSpace())
+                                                {
+                                                    string titulo = Model.Value<string>("btn_titulo");
+                                                    var link = Model.Value<Link>("btn_url");
+                                                    <td><a href="@link.Url" target="@link.Target" class="bton" style="color:white">@titulo</a></td>
+                                                }
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-content">
+                                @foreach (var tab in lst_tabs)
+                                {
+                                    contador_1++;
+                                    string urltab_1 = "tab";
+                                    if (contador_1 == 1)
+                                    {
+                                        <div id="@urltab_1@contador_1" class="tab active">
+                                            @Html.Raw(tab.Value("html"))
+                                        </div>
+
+                                    }
+                                    else
+                                    {
+                                        <div id="@urltab_1@contador_1" class="tab ">
+                                            @Html.Raw(tab.Value("html"))
+                                        </div>
+                                    }
+
+                                }
+
+                            </div>
+                        </div>
+                    }
+                    @if (lst_tabs.Count() == 1)
+                    {
+                        foreach (var tab_1 in lst_tabs)
+                        {
+                            <div>
+                                @Html.Raw(tab_1.Value("html"))
+                            </div>
+                        }
+
+                    }
+                </div>
+
+                <div class="col-md-1"></div>
+
+            </div>
+        </div>
+    </section>
+
+    @Html.Partial("Footer/Footer")
+    <script>
+    function toggleActive(e) {
+            var tab = e.currentTarget;
+            var currentActiveTab = document.querySelector('td.active');
+
+            if (currentActiveTab !== tab) {
+                var activeTabHash = currentActiveTab.firstChild.getAttribute('href');
+                var currentActiveContent = document.querySelector(activeTabHash);
+
+                var tabHash = tab.firstChild.getAttribute('href');
+                var tabContent = document.querySelector(tabHash);
+
+                currentActiveTab.classList.remove('active');
+                tab.classList.add('active');
+                currentActiveContent.classList.remove('active');
+                tabContent.classList.add('active');
+            }
+        }
+
+        var tabNodes = document.querySelectorAll('.tab-links > td');
+        for (var i = 0; i < tabNodes.length; i++) {
+            tabNodes[i].addEventListener('click', toggleActive, false);
+        }
+
+    </script>
+</body>
+        </html>
