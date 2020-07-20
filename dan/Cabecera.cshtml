@@ -46,7 +46,7 @@
     <div class="banner-top container">
         <ul class="d-flex mb-0">
             <li class="@{ if (palabra.Equals("usuarios")) { WriteLiteral("active"); } }"><a href="@Umbraco.Content(2309).Url" class="cabecera-btn">Usuarios</a></li>
-            <li class="@{ if (palabra.Equals("operadoras")) { WriteLiteral("active"); } } "><a href="@Umbraco.Content(2247).Url" class="cabecera-btn">Operadores</a></li>
+            <li class="@{ if (palabra.Equals("operadoras")) { WriteLiteral("active"); } } "><a href="@Umbraco.Content(2247).Url" class="cabecera-btn">Operadoras</a></li>
         </ul>
         <div class="d-flex">
             <form class="form-inline my-2 my-lg-0" action="@Umbraco.Content(3631).Url" method="get">
@@ -72,14 +72,14 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light container">
 
-            <a class="navbar-brand" href="@Umbraco.Content(2309).Url"><img src="@Umbraco.Media(2213).Url" alt="Opsitel"></a>
+            <a class="navbar-brand" href="@Umbraco.Content(2309).Url"><img src="@Umbraco.Media(39291).Url" alt="Opsitel"></a>
             <div class="open-nav">
                 <i class="fas fa-bars"></i>
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-3 w-100">
                     <li class="nav-item detail-be">
-                        <a class="nav-link detail" href="#">LO QUE DEBES SABER <span class="sr-only">(current)</span></a>
+                        <a class="nav-link detail" href="#">LO QUE DEBE SABER EL USUSARIO<span class="sr-only">(current)</span></a>
                         <div class="content-menu" style="z-index:10000">
                             <div class="d-flex">
                                 <ul class="content-ul">
@@ -87,7 +87,7 @@
                                     <li><a href="@Umbraco.Content(8031).Url">Cartas de Servicios</a></li>
                                     <li><a href="@Umbraco.Content(9058).Url">Preguntas Frecuentes</a></li>
                                     <li><a href="@Umbraco.Content(8033).Url">Normativas de Usuarios</a></li>
-                                    <li><a href="@Umbraco.Content(8034).Url">Actividades de Orientacion</a></li>
+                                    <li><a href="https://www.gob.pe/osiptel#campa%C3%B1as" target="_blank">Actividades de Orientacion</a></li>
                                 </ul>
                                 <div class="column-two">
                                     Guía de información y orientación
@@ -129,14 +129,14 @@
                         <a class="nav-link" href="@Umbraco.Content(13091).Url">CONSEJO DE USUARIOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="http://repositorio.osiptel.gob.pe/">INVESTIGACIONES</a>
+                        <a class="nav-link" target="_blank" href="http://repositorio.osiptel.gob.pe/">ESTUDIOS Y PUBLICACIONES</a>
                     </li>
                     <li class="nav-item  detail-be">
                         <a class="nav-link detail" href="#">CONTÁCTENOS <span class="sr-only">(current)</span></a>
                         <div class="content-menu" style="z-index:10000">
                             <div class="d-flex">
                                 <ul class="content-ul">
-                                    <li><a href="@Umbraco.Content(13083).Url">Nuestras sedes</a></li>
+                                    <li><a href="https://www.gob.pe/osiptel#contacto" target="_blank">Nuestras sedes</a></li>
                                     <li><a href="@Umbraco.Content(13084).Url">Atención a personas con discapacidad auditiva</a></li>
                                     <li><a href="@Umbraco.Content(16128).Url">Formulario de Consulta y Orientación al Usuario</a></li>
                                 </ul>
@@ -183,7 +183,7 @@
             </ul><br>
             <ul class="list-group">
                 <li class="list-group-item list-collapse" data-toggle="collapse" href="#collapse-menu" role="button" aria-expanded="false" aria-controls="collapse-menu">
-                    Lo que debes saber
+                    Lo que debe saber el usuario
                     <span class="px-2"> <i class="fas fa-chevron-down"></i></span>
 
                 </li>
@@ -193,7 +193,7 @@
                         <li class="list-group-item hide-li"><a href="@Umbraco.Content(8031).Url">Cartas de Servicios</a></li>
                         <li class="list-group-item hide-li"><a href="@Umbraco.Content(9058).Url">Preguntas Frecuentes</a></li>
                         <li class="list-group-item hide-li"><a href="@Umbraco.Content(8033).Url">Normativas de Usuarios</a></li>
-                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(8034).Url">Actividades de Orientacion</a></li>
+                        <li class="list-group-item hide-li"><a href="https://www.gob.pe/osiptel#campa%C3%B1as" target="_blank">Actividades de Orientación</a></li>
                         <li class="list-group-item hide-li extend-menu" data-toggle="collapse" href="#collapse-submenu" role="button" aria-expanded="false" aria-controls="collapse-submenu">
                             <a> Guía de información y orientación</a>
                             <span class="px-2"><i class="fas fa-plus"></i></span>
@@ -230,7 +230,7 @@
                     </ul>
                 </div>
                 <li class="list-group-item"><a class="collapse-btn" href="@Umbraco.Content(13091).Url">Consejo de Usuarios</a></li>
-                <li class="list-group-item"><a class="collapse-btn" href="http://repositorio.osiptel.gob.pe/" target="_blank">Investigaciones</a></li>
+                <li class="list-group-item"><a class="collapse-btn" href="http://repositorio.osiptel.gob.pe/" target="_blank">Estudios y Publicaciones</a></li>
                 <li class="list-group-item list-collapse" data-toggle="collapse" href="#collapse-menu-3" role="button" aria-expanded="false" aria-controls="collapse-menu">
                     Contáctenos
                     <span class="px-2"> <i class="fas fa-chevron-down"></i></span>
@@ -238,7 +238,7 @@
                 </li>
                 <div class="collapse collapse-menu" id="collapse-menu-3">
                     <ul class="list-group collapse-menu">
-                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(13083).Url">Nuestras sedes</a></li>
+                        <li class="list-group-item hide-li"><a href="https://www.gob.pe/osiptel#contacto" target="_blank">Nuestras sedes</a></li>
                         <li class="list-group-item hide-li"><a href="@Umbraco.Content(13084).Url">Atencion a personas con discapacidad auditiva</a></li>
                         <li class="list-group-item hide-li"><a href="@Umbraco.Content(16128).Url">Formulario de Consulta y Orientación al Usuario</a></li>
                     </ul>
@@ -256,7 +256,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light container">
 
-            <a class="navbar-brand" href="@Umbraco.Content(2309).Url"><img src="@Umbraco.Media(2213).Url" alt="Opsitel"></a>
+            <a class="navbar-brand" href="@Umbraco.Content(2247).Url"><img src="@Umbraco.Media(39291).Url" alt="Opsitel"></a>
             <div class="open-nav">
                 <i class="fas fa-bars"></i>
             </div>
@@ -297,12 +297,12 @@
                                     </ul>
 
                                 </div>
-    <!--Buscador de Expedientes btn-->
-                               <ul class="content-ul">
-                                   <li class="nav-item">
+                                <!--Buscador de Expedientes btn-->
+                                <ul class="content-ul">
+                                    <li class="nav-item">
                                         <a class="nav-link btn-menu" href="@Umbraco.Content(2402).Url">BUSCADOR DE EXPEDIENTES</a>
                                     </li>
-                               </ul>
+                                </ul>
                             </div>
 
                         </div>
@@ -351,38 +351,60 @@
                         <a class="nav-link detail" href="#">CONTRATOS, MANDATOS Y OFERTAS BÁSICAS <span class="sr-only">(current)</span></a>
                         <div class="content-menu" style="z-index:10000">
                             <div class="d-flex">
-                                <ul class="content-ul">
-                                    <li><a href="@Umbraco.Content(2280).Url">Ofertas Básicas</a></li>
-                                    <li><a href="@Umbraco.Content(2277).Url">Mandatos</a></li>
-                                </ul>
-                                @*<div class="column-two">
-                                        <a href="@Umbraco.Content(2280).Url">Ofertas Básicas</a>
-                                        <ul class="list-style">
-                                            <li><a href="@Umbraco.Content(3590).Url">Interconexión</a></li>
-                                            <li><a href="@Umbraco.Content(3591).Url">Compartición de infraestructura como proveedor importante</a></li>
-                                            <li><a href="@Umbraco.Content(3592).Url">Facilidades Complementarias - Red Dorsal</a></li>
-                                        </ul>
-
-                                    </div>*@
-                                <div class="column-two">
+                                
+                                 <div class="column-two">
                                     Contratos
                                     <ul class="list-style">
                                         <li><a href="@Umbraco.Content(2274).Url">Interconexión</a></li>
                                         <li><a href="@Umbraco.Content(16283).Url">Compartición de Infraestructura</a></li>
                                         <li><a href="@Umbraco.Content(2374).Url">Operadores Móviles Virtuales</a></li>
-                                        <li><a href="@Umbraco.Content(2375).Url">Operadores de Intraestructura Móvil Rural</a></li>
+                                        <li><a href="@Umbraco.Content(2375).Url">Operadores de Infraestructura Móvil Rural</a></li>
                                         <li><a href="@Umbraco.Content(2376).Url">Emisor Dinero Electrónico</a></li>
                                         <li><a href="@Umbraco.Content(16282).Url">Acuerdos de Comercialización</a></li>
                                     </ul>
-
                                 </div>
+                                
+                                <ul class="content-ul">
+                                    <li><a href="@Umbraco.Content(2277).Url">Mandatos</a></li>
+                                    <li><a href="@Umbraco.Content(2280).Url">Ofertas Básicas</a></li>
+                                </ul>
+                              
                             </div>
 
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Umbraco.Content(16268).Url">PEDIDOS DE OPINIÓN</a>
+
+                    <li class="nav-item  detail-be" style="display: none;">
+                        <a class="nav-link detail" href="#">PEDIDOS DE OPINIÓN<span class="sr-only">(current)</span></a>
                     </li>
+
+                    <li class="nav-item  detail-be" >
+                        <a class="nav-link detail" href="#">PEDIDOS DE OPINIÓN<span class="sr-only">(current)</span></a>
+                        <div class="content-menu" style="z-index:10000; right:0;">
+                            <div class="d-flex">
+                                
+                                <div class="column-two">
+                                   Pedidos de opinión de instituciones
+                                    <ul class="list-style">
+                                        <li><a href="@Umbraco.Content(16269).Url">Fusiones</a></li>
+                                        <li><a href="@Umbraco.Content(16270).Url">Renovación de Concesión: Informes Anuales</a></li>
+                                        <li><a href="@Umbraco.Content(16271).Url">Renovación de Contratos de Concesión</a></li>
+                                        <li><a href="@Umbraco.Content(16277).Url">Transferencia de Concesiones que involucra Espectro Radioeléctrico</a></li>
+                                        <li><a href="@Umbraco.Content(16278).Url">Comentarios a proyectos de ley</a></li>
+                                        <li><a href="@Umbraco.Content(16279).Url">Comentarios a bases y contratos sobre proyectos de FITEL gestionados con Proinversion.</a></li>
+                                        <li><a href="@Umbraco.Content(16280).Url">Comentarios a otros proyectos normativos</a></li>
+                                        <li><a href="@Umbraco.Content(16281).Url">Procesos de Reordenamiento de Espectro</a></li>
+                                    </ul>
+                                </div>
+                                 
+                            </div>
+
+                        </div>
+                    </li>
+
+                    @* <li class="nav-item">
+                        <a class="nav-link" href="@Umbraco.Content(16268).Url">PEDIDOS DE OPINIÓN</a>
+                    </li> *@
                     <li class="nav-item">
                         <a class="nav-link btn-menu" href="@Umbraco.Content(2271).Url">BUSCADOR DE NORMAS Y REGULACIONES</a>
                     </li>
@@ -497,9 +519,9 @@
                 </li>
                 <div class="collapse collapse-menu" id="collapse-menu-3">
                     <ul class="list-group collapse-menu">
-                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(2280).Url">Ofertas Básicass</a></li>
+                       
                         <li class="list-group-item hide-li extend-menu" data-toggle="collapse" href="#collapse-submenu-01" role="button" aria-expanded="false" aria-controls="collapse-submenu">
-                            <a>CONTRATOS</a>
+                            <a>Contratos</a>
                             <span class="px-2"><i class="fas fa-plus"></i></span>
                         </li>
                         <div class="collapse" id="collapse-submenu-01">
@@ -507,14 +529,38 @@
                                 <li class="list-group-item"><a href="@Umbraco.Content(2274).Url">Interconexión</a></li>
                                 <li class="list-group-item"><a href="@Umbraco.Content(16283).Url">Comparticion de Infraestructura</a></li>
                                 <li class="list-group-item"><a href="@Umbraco.Content(2374).Url">Operadores Móviles Virtuales</a></li>
-                                <li class="list-group-item"><a href="@Umbraco.Content(2375).Url">Operadores de Intraestructura Móvil Rural</a></li>
+                                <li class="list-group-item"><a href="@Umbraco.Content(2375).Url">Operadores de Infraestructura Móvil Rural</a></li>
                                 <li class="list-group-item"><a href="@Umbraco.Content(2376).Url">Emisor Dinero Eléctronico</a></li>
                                 <li class="list-group-item"><a href="@Umbraco.Content(16282).Url">Acuerdos de Comercialización</a></li>
                             </ul>
                         </div>
+                        
+                         <li class="list-group-item hide-li"><a href="@Umbraco.Content(2277).Url">Mandatos</a></li>
+
+                         <li class="list-group-item hide-li"><a href="@Umbraco.Content(2280).Url">Ofertas Básicas</a></li>
                     </ul>
                 </div>
-                <li class="list-group-item"><a class="collapse-btn" href="@Umbraco.Content(16268).Url">PEDIDOS DE OPINIÓN</a></li>
+
+                
+
+
+                <li class="list-group-item list-collapse" data-toggle="collapse" href="#collapse-menu-4" role="button" aria-expanded="false" aria-controls="collapse-menu">
+                PEDIDOS DE OPINIÓN
+                <span class="px-2"> <i class="fas fa-chevron-down"></i></span>
+                </li>
+                <div class="collapse collapse-menu" id="collapse-menu-4">
+                    <ul class="list-group collapse-menu">
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16269).Url">Fusiones</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16270).Url">Renovación de Concesión: Informes Anuales</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16271).Url">Renovación de Contratos de Concesión</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16277).Url">Transferencia de Concesiones que involucra Espectro Radioeléctrico</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16278).Url">Comentarios a proyectos de ley</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16279).Url">Comentarios a bases y contratos sobre proyectos de FITEL gestionados con Proinversion.</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16280).Url">Comentarios a otros proyectos normativos</a></li>
+                        <li class="list-group-item hide-li"><a href="@Umbraco.Content(16281).Url">Procesos de Reordenamiento de Espectro</a></li>
+                    </ul>
+                </div>
+                @* <li class="list-group-item"><a class="collapse-btn" href="@Umbraco.Content(16268).Url">PEDIDOS DE OPINIÓN</a></li> *@
 
                 <li class="list-group-item" style="border-bottom-width: 0;">
                     <a class="nav-link btn-menu" href="@Umbraco.Content(2271).Url">BUSCADOR DE NORMAS Y REGULACIONES</a>
@@ -529,7 +575,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light container">
 
-            <a class="navbar-brand" href="@Umbraco.Content(2309).Url"><img src="@Umbraco.Media(2213).Url" alt="Opsitel"></a>
+            <a class="navbar-brand" href="@Umbraco.Content(9056).Url"><img src="@Umbraco.Media(39291).Url" alt="Opsitel"></a>
             <div class="open-nav">
                 <i class="fas fa-bars"></i>
             </div>
@@ -547,7 +593,7 @@
                                     <li><a href="@Umbraco.Content(16140).Url">Research</a></li>
                                     <li><a href="@Umbraco.Content(16141).Url">Contact us</a></li>
                                     <li><a href="@Umbraco.Content(16142).Url">Our offices</a></li>
-                                    <li><a href="@Umbraco.Content(16143).Url">Institutional Activities Agenda</a></li>
+                                    <li><a href="https://www.gob.pe/osiptel#campa%C3%B1as" target="_blank">Institutional Activities Agenda</a></li>
                                     <li><a href="@Umbraco.Content(16144).Url">Competition Agencies</a></li>
                                     <li><a href="@Umbraco.Content(16145).Url">Communication Campaigns</a></li>
                                 </ul>
@@ -640,7 +686,7 @@
                         <div class="collapse" id="collapse-submenu-01">
                             <ul class="list-group">
                                 <li class="list-group-item"><a href="@Umbraco.Content(16147).Url">Mission, Vision and Purpose</a></li>
-                                <li class="list-group-item"><a href="@Umbraco.Content(16148).Url">Institutional values</a></li>
+                                <li class="list-group-item"><a href="https://www.gob.pe/osiptel#campa%C3%B1as" target="_blank">Institutional values</a></li>
                                 <li class="list-group-item"><a href="@Umbraco.Content(16149).Url">Objectives</a></li>
                                 <li class="list-group-item"><a href="@Umbraco.Content(16150).Url">Functions</a></li>
                                 <li class="list-group-item"><a href="@Umbraco.Content(16151).Url">Principles</a></li>

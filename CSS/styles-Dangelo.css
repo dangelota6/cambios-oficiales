@@ -231,6 +231,63 @@
 	/* text-decoration: underline; */
 }
 
+
+/* estilo consejo usuarios */
+
+.tabla-seccion-celda1 {
+	font-family: 'Museo Sans 500';
+	color: #333333;
+    font-size: 15px;
+    line-height: 16px;
+}
+
+.tabla-seccion-celda2 {
+	font-family: 'Museo Sans 500';
+	color: #333333;
+	background: #ececec;
+    font-size: 15px;
+    line-height: 16px;
+}
+
+.tabla-titulo-celda {
+	font-family: 'Museo Sans 500';
+    background: #0077ce;
+	color: #ffffff;
+    font-size: 15px;
+   
+    vertical-align: middle;
+}
+
+.btnconsejo {
+    display: inline-block;
+	font-family: 'Museo Sans 500';
+	background: #00bce4;
+	color: #ffffff !important;
+    text-transform: inherit;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 11px 35px;
+	font-size: 14px;
+    margin: 10px 11px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+td .btnconsejo.btn-small-celeste {
+    padding: 5px 10px!important;
+}
+
+
 /* responsive movil */
 
 @media (max-width: 768px) {
@@ -278,6 +335,18 @@
 		font-family: 'Museo Sans 300';
 		font-size: 14px;
 		color: #0077c0;
+	}
+
+	.tabla-seccion-celda1 {
+		font-size: 14px;
+	}
+
+	.tabla-seccion-celda2{
+		font-size: 14px;
+	}
+
+	.tabla-titulo-celda{
+		font-size: 14px;;
 	}
 }
 
